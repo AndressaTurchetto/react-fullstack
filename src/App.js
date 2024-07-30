@@ -1,25 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import Logo from './componentes/Logo';
+import perfil from './imagens/perfil.svg'
+import sacola from './imagens/sacola.svg'
+
+const textoOpcoes = ['CATEGORIAS', 'FAVORITOS', 'MINHA ESTANTE']
+const icones = [perfil, sacola]
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className='App-header'>
+        <Logo></Logo>
+        <ul className='App-header'>
+          { textoOpcoes.map( (texto) => (
+            <li className='opcao'>
+              <p>
+                {texto}
+              </p>
+            </li>
+          ))}
+        </ul>
+
+        <ul className='icones'>
+          { icones.map( (icone) => (
+            <li className='icone'>
+              <img src={icone}>
+              </img>
+            </li>
+          ))}
+        </ul>
       </header>
     </div>
   );
 }
 
-export default App;
+export default App
