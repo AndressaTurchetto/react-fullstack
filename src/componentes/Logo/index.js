@@ -1,18 +1,23 @@
-import './estilo.css';
 import logo from '../../imagens/logo.svg'
+import styled from 'styled-components'
 
-function Logo() {
-    return (
-        <div className='logo'>
-            <img 
-                className='logo-img'
-                src={logo} 
-                alt='logo'>
-            </img>
-            <p>
-                <strong>Google</strong>Books
-            </p>
-        </div>
+const LogoContainer = styled.div`
+    display: flex;
+    font-size: 30px;
+`
+const LogoImage = styled.img`
+    margin-right: 10px;
+`
+
+function Logo () {
+    return(
+        <LogoContainer>
+            <LogoImage
+                src={logo}
+                alt='logo'
+            />
+            <p><strong>Alura</strong>Books</p>
+        </LogoContainer>
     )
 }
 
